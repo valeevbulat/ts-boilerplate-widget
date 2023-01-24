@@ -1,0 +1,124 @@
+:root {
+    --mp-button-bg: rgb(232, 76, 113);
+    --mp-button-confirm-image: url("../images/confirm.svg");
+    --mp-button-confirm-size: 20px;
+    --mp-button-loader-image: url("../images/loader.svg");
+    --mp-button-loader-size: 20px;
+    --mp-button-height: calc(100% - 8px);
+    --mp-button-color: #fff;
+    --mp-button-padding: 8px;
+    --mp-button-border-radius: 4px;
+    --mp-button-font-size: 14px;
+
+    --mp-field-font-size: 14px;
+    --mp-field-color: #1f2937;
+    --mp-field-padding: 10px;
+    --mp-field-border-radius: 4px;
+
+    --mp-mcode-font-size: 14px;
+    --mp-mcode-bg: #fff;
+    --mp-mcode-color: #1f2937;
+    --mp-mcode-padding: 0 6px 0 24px;
+    --mp-mcode-border-color: rgb(232, 76, 113);
+    --mp-mcode-border-radius: 4px;
+    --mp-mcode-btn-color: rgb(232, 76, 113);
+
+    --mp-field-wrapper-border-radius: 4px;
+    --mp-field-wrapper-border-color: rgb(232, 76, 113);
+    --mp-field-wrapper-height: 43px;
+    --mp-field-wrapper-padding: 0 4px 0 30px;
+    --mp-field-wrapper-bg: #fff;
+
+    --config-font-family: "DM Sans", sans-serif;
+}
+
+.mp-widget {
+    display: flex;
+    font-family: var(--config-font-family);
+    width: 100%;
+    max-width: 200px;
+}
+
+.mp-widget--active-mcode {
+    max-width: 200px;
+}
+
+.mp-widget__field {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    margin: 0;
+    font: inherit;
+    flex: 1 2 100%;
+    font-size: var(--mp-field-font-size);
+    padding: var(--mp-field-padding);
+    color: var(--mp-field-color);
+    text-align: left;
+    border-radius: var(--mp-field-border-radius);
+    min-width: 54px;
+}
+
+.mp-widget__field-btn {
+    box-sizing: border-box;
+    cursor: pointer;
+    box-shadow: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 120ms ease 0s, color 120ms ease 0s, border-color 120ms ease 0s;
+    font-size: var(--mp-button-font-size);
+    padding: var(--mp-button-padding);
+    line-height: 1;
+    height: var(--mp-button-height);
+    border: none;
+    border-radius: var(--mp-button-border-radius);
+    color: var(--mp-button-color);
+    font-weight: 500;
+    font-family: inherit;
+
+    width: 40px;
+    min-width: 40px;
+    background-color: var(--mp-button-bg);
+    background-image: var(--mp-button-confirm-image);
+    background-size: var(--mp-button-confirm-size);
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-left: auto;
+}
+
+.mp-widget__field-btn:disabled {
+    opacity: 0.44;
+    cursor: default;
+}
+
+.mp-widget__field-btn--loading {
+    background-image: var(--mp-button-loader-image);
+    background-size: var(--mp-button-loader-size);
+}
+
+.mp-widget__field-wrapper {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    overflow: hidden;
+    background: var(--mp-field-wrapper-bg) url("../images/logo.png") no-repeat 8px center;
+    background-size: 20px;
+
+    border: 1px solid var(--mp-field-wrapper-border-color);
+    border-radius: var(--mp-field-wrapper-border-radius);
+    align-items: center;
+    height: var(--mp-field-wrapper-height);
+    padding: var(--mp-field-wrapper-padding);
+}
+
+.mp-widget--light {
+    --mp-field-wrapper-bg: #fff;
+}
+
+.mp-widget--dark {
+    --mp-field-wrapper-bg: transparent;
+    --mp-field-color: #fff;
+    --mp-mcode-color: #fff;
+}

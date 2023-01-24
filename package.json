@@ -1,9 +1,14 @@
 {
-  "name": "@hodgef/ts-library-boilerplate-basic",
+  "name": "@valeevsstudio/ts-library-boilerplate-basic",
   "version": "1.1.174",
   "description": "Typescript Minimal Starter Kit for building libraries",
   "main": "build/index.js",
   "types": "build/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ValeevsStudio/ts-boilerplate-widget"
+  },
+  "author": "Valeev Bulat (https://github.com/ValeevsStudio/ts-boilerplate-widget)",
   "scripts": {
     "start": "webpack serve --config webpack.config.demo.js",
     "build": "webpack && tsc",
@@ -13,16 +18,7 @@
     "prepare": "npm run build",
     "trypublish": "npm publish || true"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hodgef/ts-library-boilerplate-basic"
-  },
-  "author": "Francisco Hodge <hello@franciscohodge.com> (https://github.com/hodgef)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hodgef/ts-library-boilerplate-basic/issues"
-  },
-  "homepage": "https://github.com/hodgef/ts-library-boilerplate-basic",
   "keywords": [
     "library",
     "starter",
@@ -73,5 +69,8 @@
       "jsx",
       "node"
     ]
+  },
+  "dependencies": {
+    "@openfonts/dm-sans_latin": "^1.0.2"
   }
 }
