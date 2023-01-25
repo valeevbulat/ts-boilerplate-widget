@@ -32,6 +32,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     library: "MyLibrary",
     libraryTarget: 'umd',
+    globalObject: "this",
     clean: true
   },
   optimization: {
