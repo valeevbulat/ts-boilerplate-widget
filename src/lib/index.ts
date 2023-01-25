@@ -10,7 +10,7 @@ export interface IMultiplierWidgetInitOptions {
   placeholder?: string;
 }
 
-class MultiplierWidget {
+export class MultiplierWidget {
   mcode: TMcode = null;
   fieldId: string;
 
@@ -19,7 +19,7 @@ class MultiplierWidget {
     console.debug("MultiplierWidget loaded");
   }
 
-  init = ({ elementSelector, theme, placeholder = "Multiplier Code" }: IMultiplierWidgetInitOptions) => {
+  init({ elementSelector, theme, placeholder = "Multiplier Code" }: IMultiplierWidgetInitOptions) {
     const className = `mp-widget ${theme === 'dark' ? 'mp-widget--dark' : 'mp-widget--light'} ${this.mcode ? 'mp-widget--active-mcode' : ''}`;
     this.fieldId = MultiplierWidget.getRandomId('mp-');
     if (this.mcode) {
@@ -45,7 +45,7 @@ class MultiplierWidget {
     }
 
     console.debug("MultiplierWidget initiated");
-  };
+  }
 
   render(elementSelector: string, content: string) {
     const node = document.querySelector(elementSelector);
@@ -61,5 +61,3 @@ class MultiplierWidget {
     return prefix+Math.random().toString(16).slice(2)
   }
 }
-
-export default MultiplierWidget;
