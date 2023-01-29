@@ -198,12 +198,9 @@ export class MultiplierWidget extends Api {
 
             await this.checkMultiplierCode(this.fieldValue);
 
-            await new Promise((resolve) => {
-                setTimeout(() => {
-                    Cookies.set(this.mcodeCookieKey, this.fieldValue);
-                    resolve(true);
-                }, 3000)
-            })
+            Cookies.set(this.mcodeCookieKey, this.fieldValue);
+
+            // await this.pairMultiplierCode();
 
             this.setMcode(this.fieldValue);
 
@@ -212,6 +209,7 @@ export class MultiplierWidget extends Api {
             log("MultiplierWidget: end save mcode");
         } catch (error) {
             this.error = 'This m-code is not exist';
+            Cookies.set(this.mcodeCookieKey, this.fieldValue);
             logError(error);
         } finally {
             this.toggleFieldButtonLoading(false);

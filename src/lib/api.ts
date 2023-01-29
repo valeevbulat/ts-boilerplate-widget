@@ -29,11 +29,11 @@ export class Api {
         return this._mcode;
     }
 
-    getApiUrl(postfix: string): string {
+    protected getApiUrl(postfix: string): string {
         return this.baseUrl + postfix;
     }
 
-    api<T>(url: string, options?: RequestInit): Promise<T> {
+    protected api<T>(url: string, options?: RequestInit): Promise<T> {
         return fetch(this.getApiUrl(url), options)
             .then(response => {
                 if (!response.ok) {
@@ -43,7 +43,7 @@ export class Api {
             })
     }
 
-    checkMultiplierCode(mcode: string) {
+    protected checkMultiplierCode(mcode: string) {
         return this.api<{
             id: number;
             name: string;
@@ -51,7 +51,11 @@ export class Api {
         }>(`/multiplier_codes/${mcode}`);
     }
 
-    pushEvent(offerId?: number) {
+    protected pairMultiplierCode() {
+        return this.api('/pair-user-mcode', { method: 'post' });
+    }
+
+    public pushEvent(offerId?: number) {
         if (!this._mcode) {
             logError('MultiplierWidget: does not have mcode for pushEvent');
             return;
