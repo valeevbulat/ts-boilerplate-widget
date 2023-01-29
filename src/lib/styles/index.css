@@ -15,6 +15,13 @@
     --mp-field-padding: 10px;
     --mp-field-border-radius: 4px;
 
+    --mp-error-bg: #fff;
+    --mp-error-color: #1f2937;
+    --mp-error-border-radius: 4px;
+    --mp-error-margin: 8px 0 0 0;
+    --mp-error-padding: 8px;
+    --mp-error-font-size: 11px;
+
     --mp-mcode-font-size: 14px;
     --mp-mcode-bg: #fff;
     --mp-mcode-color: #1f2937;
@@ -120,15 +127,16 @@
     position: absolute;
     z-index: 10;
     top: 100%;
-
-    background: #fff;
-    border-radius: 4px;
-    margin-top: 8px;
-    padding: 8px;
-    font-size: 11px;
     width: 100%;
     box-sizing: border-box;
     pointer-events: none;
+
+    background: var(--mp-error-bg);
+    color: var(--mp-error-color);
+    border-radius: var(--mp-error-border-radius);
+    margin: var(--mp-error-margin);
+    padding: var(--mp-error-padding);
+    font-size: var(--mp-error-font-size);
 }
 
 .mp-d-block {

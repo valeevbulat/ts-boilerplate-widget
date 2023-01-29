@@ -1,9 +1,10 @@
 import {Api} from "./api";
 import Cookies from "js-cookie";
-
-import '@openfonts/dm-sans_latin';
-import "./styles/index.css";
-import {log, logError, logJSON} from "./logger";
+import {
+    log,
+    logError,
+    logJSON,
+} from "./logger";
 
 export type TMcode = string | null;
 export type TTheme = 'dark' | 'light';
