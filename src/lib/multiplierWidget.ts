@@ -81,13 +81,15 @@ export class MultiplierWidget extends Api {
 
     public async checkQueryParam() {
       const searchParams = new URLSearchParams(window.location.search);
-      const mcode = searchParams.get(this.mcodeSearchParam);
+      const mcode = searchParams.get(this.mcodeSearchParam) as string | undefined;
 
-      if (!this.mcode) {
-          this.setFieldValue(mcode.trim());
-
-          await this.saveMcode();
+      if (!mcode || this.mcode) {
+          return;
       }
+
+      this.setFieldValue(mcode.trim());
+
+      await this.saveMcode();
     }
 
     public init({theme, placeholder = "Multiplier Code"}: IMultiplierWidgetInitOptions): void {
