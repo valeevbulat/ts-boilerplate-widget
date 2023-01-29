@@ -45,11 +45,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(m|j|t)s$/,
+        test: /\.(m|j)s$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -62,7 +67,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-        filename: 'css/index.css'
+        filename: 'styles.css'
     }),
     new webpack.BannerPlugin(banner)
   ],

@@ -37,6 +37,7 @@
     font-family: var(--config-font-family);
     width: 100%;
     max-width: 200px;
+    position: relative;
 }
 
 .mp-widget--active-mcode {
@@ -57,6 +58,7 @@
     text-align: left;
     border-radius: var(--mp-field-border-radius);
     min-width: 54px;
+    z-index: 0;
 }
 
 .mp-widget__field-btn {
@@ -113,6 +115,26 @@
     padding: var(--mp-field-wrapper-padding);
 }
 
+.mp-widget__field-error {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 11px;
+    width: 100%;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.mp-d-block {
+    display: block;
+}
+
 .mp-widget--light {
     --mp-field-wrapper-bg: #fff;
 }
@@ -121,4 +143,27 @@
     --mp-field-wrapper-bg: transparent;
     --mp-field-color: #fff;
     --mp-mcode-color: #fff;
+}
+
+.shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-3px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(3px, 0, 0);
+    }
 }
