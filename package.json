@@ -73,7 +73,7 @@
     ]
   },
   "dependencies": {
-    "@openfonts/dm-sans_latin": "^1.0.2",
+    "@openfonts/dm-sans_latin": "^1.44.2",
     "js-cookie": "^3.0.1"
   }
 }
